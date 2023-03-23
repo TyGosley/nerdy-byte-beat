@@ -29,6 +29,7 @@ const signupFormHandler = async (event) => {
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
+  // TODO:  Keep getting bad fetch request here
   if (name && email && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
@@ -39,6 +40,7 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
+      console.log(response)
       alert(response.statusText);
     }
   }
