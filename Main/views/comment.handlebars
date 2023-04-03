@@ -1,0 +1,23 @@
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Edit Post:</h3>
+<p class="postId" value="{{post.id}}"></p>
+
+    <form class="form new-post-form">
+      <div class="form-group">
+        <label for="post-name">post name:</label>
+        <p class=""  type="text" id="post-name" name="post-name">{{post.name}}</p>
+      </div>
+      
+      <div class="form-group">
+        <label for="post-desc">description:</label>
+        <p class="" id="post-desc" name="post-desc">{{post.description}}</p>
+      </div>
+      <div class="form-group">
+        <input class="form-input" value="{{post.id}}" type="text" id="post-id" name="post-id" />
+        <button type="submit" class="btn btn-primary">Comment me</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="/js/comment.js"></script>

@@ -84,6 +84,23 @@ router.get('/edit/:id', withAuth, async (req, res) => {
   }
 });
 
+// comment route
+router.get('/post/:id/comment', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const postData = await Post.findByPk(req.params.id);
+
+    const post = postData.get({ plain: true })
+    res.render('comment', {
+      post,
+      // ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {

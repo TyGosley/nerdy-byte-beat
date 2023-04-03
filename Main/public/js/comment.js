@@ -1,9 +1,7 @@
-const postId = document.querySelector(".postId").value
-console.log(postId);
 const newFormHandler = async (event) => {
     event.preventDefault();
   
-    const name = document.querySelector('#post-name').value.trim();
+    const comment_text = document.querySelector('#post-name').value.trim();
     const description = document.querySelector('#post-desc').value.trim();
   
     if (name && description) {
