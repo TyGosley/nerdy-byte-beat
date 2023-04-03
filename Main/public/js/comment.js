@@ -1,26 +1,25 @@
 const newFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const comment_text = document.querySelector('#post-name').value.trim();
-    const description = document.querySelector('#post-desc').value.trim();
-  
-    if (name && description) {
-      const response = await fetch(`/api/posts/${postId}`, {
-        method: 'PUT',
-        body: JSON.stringify({ name, description }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/profile');
-      } else {
-        alert('Failed to create post');
-      }
-    }
-  };
+  event.preventDefault();
 
-  document
-  .querySelector('.new-post-form')
-  .addEventListener('submit', newFormHandler);
+  const commentText = document.querySelector('#comment-text').value.trim();
+
+  if (commentText) {
+    const postId = document.querySelector('#post-id').value.trim();
+
+    const response = await fetch(`/api/comments/${postId}`, {
+      method: 'POST',
+      body: JSON.stringify({ comment_text: commentText }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.reload();
+    } else {
+      alert('Failed to add comment');
+    }
+  }
+};
+
+document.querySelector('.form').addEventListener('submit', newFormHandler);

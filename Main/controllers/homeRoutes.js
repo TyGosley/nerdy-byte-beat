@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// get all posts for homepage
 router.get('/', async (req, res) => {
   try {
     // Get all post and JOIN with user data
@@ -18,15 +19,16 @@ router.get('/', async (req, res) => {
     const posts = postData.map((post) => post.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      posts, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      posts,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+// get single post
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -42,7 +44,7 @@ router.get('/post/:id', async (req, res) => {
 
     res.render('post', {
       ...post,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -50,6 +52,7 @@ router.get('/post/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
+
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
@@ -62,22 +65,23 @@ router.get('/profile', withAuth, async (req, res) => {
 
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+// edit post route
 router.get('/edit/:id', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const postData = await Post.findByPk(req.params.id);
 
-    const post = postData.get({ plain: true })
+    const post = postData.get({ plain: true });
     res.render('edit-post', {
       post,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -85,22 +89,23 @@ router.get('/edit/:id', withAuth, async (req, res) => {
 });
 
 // comment route
-router.get('/post/:id/comment', withAuth, async (req, res) => {
+router.get('/comment/:id', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const postData = await Post.findByPk(req.params.id);
 
-    const post = postData.get({ plain: true })
+    const post = postData.get({ plain: true });
     res.render('comment', {
       post,
       // ...user,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+// login route
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
