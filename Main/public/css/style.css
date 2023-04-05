@@ -1,5 +1,70 @@
+:root {
+  --pumpkin-orange: #f2751e;
+  --maize: #f4d4a4;
+  --sienna: #a9571f;
+  --greyish-teal: #679c9a;
+  --coral-reef: #c4b9a2;
+  --limed-spruce: #30444c;
+
+}
+
 header, .post:not(:last-child) {
   border-bottom: 1px solid #ccc;
+}
+
+header {
+  background: linear-gradient(90deg, var(--pumpkin-orange), var(--maize), var(--sienna), var(--greyish-teal), var(--coral-reef));
+}
+
+h2 {
+  /* font-family: 'Lobster', cursive; */
+  color: black;
+  font-size: 1.9rem;
+  font-weight: bolder;
+  margin: 0px;
+  padding: 3px;
+}
+
+h3 {
+  /* font-family: 'Lobster', cursive; */
+  color: black;
+  font-size: 1.5rem;
+  margin: 0px;
+  padding: 3px;
+}
+
+html {
+  background: var(--limed-spruce);
+  background: radial-gradient(circle, var(--limed-spruce), var(--greyish-teal), var(--coral-reef), var(--pumpkin-orange));
+}
+
+body {
+  /* background-color: var(--maize); */
+  /* color: var(--sienna); */
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+#title {
+  /* font-family: 'Lobster', cursive; */
+  /* background: -webkit-linear-gradient(90deg, var(--limed-spruce) 0%, var(--maize) 100%); */
+  color: var(--limed-spruce);
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--limed-spruce);
+
+}
+
+label {
+  color: var(--sienna);
+  font-weight: bold;
 }
 
 .no-button {
@@ -17,8 +82,6 @@ header, .post:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+#logout {
+  color: var(--sienna);
 }
