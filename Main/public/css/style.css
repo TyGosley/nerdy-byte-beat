@@ -8,12 +8,17 @@
 
 }
 
+* {
+  font-family: 'Play', sans-serif;
+}
+
 header, .post:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
 header {
   background: linear-gradient(90deg, var(--pumpkin-orange), var(--maize), var(--sienna), var(--greyish-teal), var(--coral-reef));
+  font-family: 'Play', sans-serif;
 }
 
 h2 {
@@ -84,4 +89,15 @@ label {
 
 #logout {
   color: var(--sienna);
+}
+
+.btn.btn-primary {
+  background-color: var(--limed-spruce);
+  color: var(--maize);
+}
+
+
+.btn.btn-success {
+  background-color: var(--limed-spruce);
+  color: var(--maize);
 }
