@@ -10,12 +10,12 @@
 
     <form class="form new-post-form">
       <div class="form-group">
-        <label for="post-name">post name:</label>
+        <label for="post-name">Post Name:</label>
         <input class="form-input" type="text" id="post-name" name="post-name" />
       </div>
       
       <div class="form-group">
-        <label for="post-desc">description:</label>
+        <label for="post-desc">Description:</label>
         <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
       </div>
       <div class="form-group">
@@ -26,7 +26,7 @@
 
   {{#if posts.length}}
   <div class="col-md-6 post-list">
-    <h3>Your Posts:</h3>
+    <h3>Your Nerd Posts:</h3>
 
     {{#each posts as |post|}}
     <div class="row mb-2">
