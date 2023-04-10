@@ -31,7 +31,6 @@ const signupFormHandler = async (event) => {
   // const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
-  // TODO:  Keep getting bad request request here
   if (name && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
@@ -42,16 +41,12 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/profile');
     } else {
-      console.log(response)
+      console.log(response);
       alert(response.statusText);
     }
   }
 };
 
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
 
-document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);

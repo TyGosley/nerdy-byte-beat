@@ -17,8 +17,6 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.reload();
     } else {
-      console.log(commentText);
-      console.log(postId);
       alert('Failed to add comment');
     }
   }
