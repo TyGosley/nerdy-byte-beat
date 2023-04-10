@@ -6,7 +6,7 @@ const newFormHandler = async (event) => {
   if (commentText) {
     const postId = document.querySelector('#post-id').value.trim();
 
-    const response = await fetch(`/api/comments/${postId}`, {
+    const response = await fetch(`/api/comments/`, {
       method: 'POST',
       body: JSON.stringify({ comment_text: commentText, post_id: postId }),
       headers: {
@@ -17,6 +17,8 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.reload();
     } else {
+      console.log(commentText);
+      console.log(postId);
       alert('Failed to add comment');
     }
   }

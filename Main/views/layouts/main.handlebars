@@ -11,7 +11,8 @@
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
+  <div id="page-conatiner">
+  <div class="flex-column justify-space-around" id="content-wrap">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
         <span role="img" aria-label="nerd emoji">🤓</span>
@@ -32,7 +33,7 @@
       {{{ body }}}
     </main>
 
-    <footer>
+    <footer id="footer">
       Nerdy Byte Beat &copy; 2023 By Be Awesome Productions
     </footer>
   </div>
@@ -41,6 +42,7 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  </div>
 </body>
 
 </html>

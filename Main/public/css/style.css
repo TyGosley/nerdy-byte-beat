@@ -17,12 +17,11 @@ header, .post:not(:last-child) {
 }
 
 header {
-  background: linear-gradient(90deg, var(--pumpkin-orange), var(--maize), var(--sienna), var(--greyish-teal), var(--coral-reef));
+  /* background: linear-gradient(90deg, var(--pumpkin-orange), var(--maize), var(--sienna), var(--greyish-teal), var(--coral-reef)); */
   font-family: 'Play', sans-serif;
 }
 
 h2 {
-  /* font-family: 'Lobster', cursive; */
   color: black;
   font-size: 1.9rem;
   font-weight: bolder;
@@ -31,7 +30,6 @@ h2 {
 }
 
 h3 {
-  /* font-family: 'Lobster', cursive; */
   color: black;
   font-size: 1.5rem;
   margin: 0px;
@@ -44,8 +42,6 @@ html {
 }
 
 body {
-  /* background-color: var(--maize); */
-  /* color: var(--sienna); */
   font-family: 'Open Sans', sans-serif;
   font-size: 1.2rem;
   line-height: 1.5;
@@ -54,8 +50,6 @@ body {
 }
 
 #title {
-  /* font-family: 'Lobster', cursive; */
-  /* background: -webkit-linear-gradient(90deg, var(--limed-spruce) 0%, var(--maize) 100%); */
   color: var(--limed-spruce);
   font-size: 2.5rem;
   margin: 0;
@@ -100,4 +94,21 @@ label {
 .btn.btn-success {
   background-color: var(--limed-spruce);
   color: var(--maize);
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;   
+  margin-top: auto;         /* Footer height */
 }
