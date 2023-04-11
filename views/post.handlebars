@@ -1,0 +1,28 @@
+<div class="text-center">
+  <h2>{{name}}</h2>
+  <p>{{description}}</p>
+  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  {{#each comments as |comment|}}
+  <p>{{comment.comment_text}}</p>
+  {{/each}}
+  <p>
+    <button class="btn btn-primary">CHANGE ME</button>
+  </p>
+  
+
+  <p>
+  <button class="btn btn-success add-comment-btn">Add Comment</button>
+</p>
+
+
+<div class="add-comment-form" style="display: none;">
+  <label for="comment-text">Comment:</label>
+  <textarea id="comment-text" name="comment-text"></textarea>
+  <input id="post-id" name="post-id" type="hidden" value="{{post.id}}">
+  <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+
+</div>
+
+
+<script src="/js/post.js"></script>
