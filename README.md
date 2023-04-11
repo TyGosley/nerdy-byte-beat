@@ -16,7 +16,7 @@
 ## Deployed
 
 ---
-Visit the Nerdy Byte Beat at TODO: heroku path
+Visit the Nerdy Byte Beat at <https://obscure-fortress-82547.herokuapp.com/>
 
 ## Description
 
